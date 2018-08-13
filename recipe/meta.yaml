@@ -1,4 +1,4 @@
-{% set version = '1.2-5' %}
+{% set version = "1.2-6" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/Brobdingnag_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/Brobdingnag/Brobdingnag_{{ version }}.tar.gz
-  sha256: f88e0c1b7d0eb817c52005a62dbf1993405dd5100c442a4ab499c75a4d77c9d3
+  sha256: 19eccaed830ce9d93b70642f6f126ac66722a98bbd48586899cc613dd9966ad4
 
 build:
   number: 0
