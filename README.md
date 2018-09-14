@@ -1,7 +1,7 @@
 About r-brobdingnag
 ===================
 
-Home: https://CRAN.R-project.org/package=Brobdingnag
+Home: https://github.com/RobinHankin/Brobdingnag.git
 
 Package license: GPL-2 and GPL-3
 

@@ -1,5 +1,4 @@
-{% set version = "1.2-6" %}
-
+{% set version = '1.2-6' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: Brobdingnag_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/Brobdingnag_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/Brobdingnag/Brobdingnag_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Brobdingnag_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/Brobdingnag/Brobdingnag_{{ version }}.tar.gz
   sha256: 19eccaed830ce9d93b70642f6f126ac66722a98bbd48586899cc613dd9966ad4
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,18 +23,19 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('Brobdingnag')"  # [not win]
+    - $R -e "library('Brobdingnag')"           # [not win]
     - "\"%R%\" -e \"library('Brobdingnag')\""  # [win]
 
 about:
-  home: https://CRAN.R-project.org/package=Brobdingnag
+  home: https://github.com/RobinHankin/Brobdingnag.git
   license: GPL-2 and GPL-3
   summary: Handles very large numbers in R.  Real numbers are held using their natural logarithms,
     plus a logical flag indicating sign.  The package includes a vignette that gives
@@ -50,3 +51,4 @@ extra:
     - daler
     - jdblischak
     - cbrueffer
+    - dbast
