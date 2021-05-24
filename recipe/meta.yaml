@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: Brobdingnag_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/Brobdingnag_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Brobdingnag/Brobdingnag_{{ version }}.tar.gz
   sha256: 19eccaed830ce9d93b70642f6f126ac66722a98bbd48586899cc613dd9966ad4
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 1003
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -36,19 +35,14 @@ test:
 
 about:
   home: https://github.com/RobinHankin/Brobdingnag.git
-  license: GPL-2 and GPL-3
+  license: GPL-2.0-or-later
   summary: Handles very large numbers in R.  Real numbers are held using their natural logarithms,
     plus a logical flag indicating sign.  The package includes a vignette that gives
     a step-by-step introduction to using S4 methods.
   license_family: GPL
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
