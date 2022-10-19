@@ -1,4 +1,4 @@
-{% set version = "1.2-7" %}
+{% set version = "1.2-9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Brobdingnag_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Brobdingnag/Brobdingnag_{{ version }}.tar.gz
-  sha256: 73a734342736da5b29c2827d91f662101873503af7ad9cdf9e9e697bb32dd742
+  sha256: f9012d250bc2a0f47815d6a7c06df2d4ddf3d8bab2d3b75e8cdefd964d20e91e
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
