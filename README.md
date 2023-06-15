@@ -1,11 +1,11 @@
-About r-brobdingnag
-===================
+About r-brobdingnag-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-brobdingnag-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/RobinHankin/Brobdingnag.git
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-brobdingnag-feedstock/blob/main/LICENSE.txt)
 
 Summary: Handles very large numbers in R.  Real numbers are held using their natural logarithms, plus a logical flag indicating sign.  The package includes a vignette that gives a step-by-step introduction to using S4 methods.
 
